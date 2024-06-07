@@ -13,7 +13,8 @@ public class FinancialProduct {
     @Id
     private String id;
     private String uniqueCode;
-    private List<NodeProducts> nodeProducts;
     private String coinType;
+    private Integer type;
+    private String name;
 
 }

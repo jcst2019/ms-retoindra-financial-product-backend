@@ -12,9 +12,7 @@ public class SavingsAccount extends FinancialProduct {
     private double interestRate;
 
     public SavingsAccount() {
-        NodeProducts node = new NodeProducts();
-        node.setType(ProductType.SAVINGS_ACCOUNT.getType()); // Assuming 1 represents SAVINGS_ACCOUNT
-        node.setName(ProductType.SAVINGS_ACCOUNT.getName());
-        this.setNodeProducts(List.of(node));
+        this.setType(ProductType.SAVINGS_ACCOUNT.getType());
+        this.setName(ProductType.SAVINGS_ACCOUNT.getName());
     }
 }

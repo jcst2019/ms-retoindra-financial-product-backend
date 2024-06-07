@@ -1,5 +1,6 @@
 package com.reto.indra.ms_retoindra_financial_product_backend.model;
 
+import com.org.reto.indra.enums.ProductType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,9 +12,7 @@ public class CreditCard extends FinancialProduct {
     private double creditLimit;
 
     public CreditCard() {
-        NodeProducts node = new NodeProducts();
-        node.setType(2); // Assuming 2 represents CREDIT_CARD
-        node.setName("Credit Card");
-        this.setNodeProducts(List.of(node));
+        this.setType(ProductType.CREDIT_CARD.getType());
+        this.setName(ProductType.CREDIT_CARD.getName());
     }
 }

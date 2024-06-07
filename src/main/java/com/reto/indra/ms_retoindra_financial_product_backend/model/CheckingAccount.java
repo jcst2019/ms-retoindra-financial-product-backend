@@ -1,5 +1,6 @@
 package com.reto.indra.ms_retoindra_financial_product_backend.model;
 
+import com.org.reto.indra.enums.ProductType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,9 +12,7 @@ public class CheckingAccount extends FinancialProduct {
     private double overdraftLimit;
 
     public CheckingAccount() {
-        NodeProducts node = new NodeProducts();
-        node.setType(4); // Assuming 4 represents CHECKING_ACCOUNT
-        node.setName("Checking Account");
-        this.setNodeProducts(List.of(node));
+        this.setType(ProductType.CHECKING_ACCOUNT.getType());
+        this.setName(ProductType.CHECKING_ACCOUNT.getName());
     }
 }
