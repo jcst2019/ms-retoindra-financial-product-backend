@@ -6,6 +6,7 @@ import reactor.core.publisher.Mono;
 public interface FinancialProductService {
 
     Flux<FinancialProduct> listFinancialProduct();
+    Flux<FinancialProduct> listFinancialProductByUniqueCode(String uniqueCode);
     Mono<FinancialProduct> createFinancialProduct(FinancialProduct financialProduct);
 
 }

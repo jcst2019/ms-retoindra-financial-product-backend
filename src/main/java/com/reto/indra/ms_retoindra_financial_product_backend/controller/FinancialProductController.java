@@ -27,6 +27,14 @@ public class FinancialProductController {
     public ResponseEntity<Flux<FinancialProduct>> listFinancialProduct(){
         return new ResponseEntity<>(financialProductService.listFinancialProduct(), HttpStatus.OK);
     }
+
+    @GetMapping(value="/findByUniqueCode")
+    public ResponseEntity<Flux<FinancialProduct>> findByUniqueCode(@RequestParam("uniqueCode") String encodedUniqueCode){
+        encodedUniqueCode = encodedUniqueCode.replace(" ", "+");
+        logger.info("encodedUniqueCode: {}", encodedUniqueCode);
+        return new ResponseEntity<>(financialProductService.listFinancialProductByUniqueCode(encodedUniqueCode), HttpStatus.OK);
+    }
+
     @PostMapping(value="/create")
     public ResponseEntity<Mono<FinancialProduct>> createFinancialProduct(@RequestBody FinancialProduct financialProduct) {
         try {

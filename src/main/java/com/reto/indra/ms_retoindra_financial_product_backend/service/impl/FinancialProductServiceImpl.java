@@ -25,6 +25,11 @@ public class FinancialProductServiceImpl implements FinancialProductService {
     }
 
     @Override
+    public Flux<FinancialProduct> listFinancialProductByUniqueCode(String uniqueCode) {
+        return financialProductRepository.findByUniqueCode(uniqueCode);
+    }
+
+    @Override
     public Mono<FinancialProduct> createFinancialProduct(FinancialProduct financialProduct) {
         return financialProductRepository.save(financialProduct);
     }
