@@ -12,7 +12,19 @@ public class SavingsAccount extends FinancialProduct {
     private double interestRate;
 
     public SavingsAccount() {
+        this.setTypeAndName();
+    }
+
+    @Override
+    public void setTypeAndName() {
         this.setType(ProductType.SAVINGS_ACCOUNT.getType());
         this.setName(ProductType.SAVINGS_ACCOUNT.getName());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " SavingsAccount{" +
+                    "interestRate=" + interestRate +
+                '}';
     }
 }

@@ -12,7 +12,19 @@ public class CreditCard extends FinancialProduct {
     private double creditLimit;
 
     public CreditCard() {
+        this.setTypeAndName();
+    }
+
+    @Override
+    public void setTypeAndName() {
         this.setType(ProductType.CREDIT_CARD.getType());
         this.setName(ProductType.CREDIT_CARD.getName());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " CreditCard{" +
+                "creditLimit=" + creditLimit +
+                '}';
     }
 }

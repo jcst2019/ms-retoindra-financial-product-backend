@@ -30,9 +30,9 @@ public class FinancialProductController {
     @PostMapping(value="/create")
     public ResponseEntity<Mono<FinancialProduct>> createCustomer(@RequestBody FinancialProduct financialProduct) {
         try {
-            logger.info("customer =>: {}", financialProduct);
-            SecretKey key = EncryptionAESUtil.generateAESKey();
-
+            logger.info("customer =>: {}", financialProduct.toString());
+            financialProduct.setTypeAndName();
+            logger.info("customer =>: {}", financialProduct.toString());
             return new ResponseEntity<>(financialProductService.createFinancialProduct(financialProduct), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

@@ -4,15 +4,26 @@ import com.org.reto.indra.enums.ProductType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.List;
-
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class CheckingAccount extends FinancialProduct {
     private double overdraftLimit;
 
     public CheckingAccount() {
+        this.setTypeAndName();
+    }
+
+    @Override
+    public void setTypeAndName() {
         this.setType(ProductType.CHECKING_ACCOUNT.getType());
         this.setName(ProductType.CHECKING_ACCOUNT.getName());
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " CheckingAccount{" +
+                "overdraftLimit=" + overdraftLimit +
+                '}';
+    }
+
 }
