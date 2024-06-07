@@ -1,5 +1,6 @@
 package com.reto.indra.ms_retoindra_financial_product_backend.model;
 
+import com.org.reto.indra.enums.ProductType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,8 +13,8 @@ public class SavingsAccount extends FinancialProduct {
 
     public SavingsAccount() {
         NodeProducts node = new NodeProducts();
-        node.setType(1); // Assuming 1 represents SAVINGS_ACCOUNT
-        node.setName("Savings Account");
+        node.setType(ProductType.SAVINGS_ACCOUNT.getType()); // Assuming 1 represents SAVINGS_ACCOUNT
+        node.setName(ProductType.SAVINGS_ACCOUNT.getName());
         this.setNodeProducts(List.of(node));
     }
 }
