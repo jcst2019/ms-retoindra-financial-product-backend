@@ -4,8 +4,6 @@ import com.org.reto.indra.enums.ProductType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.List;
-
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class SavingsAccount extends FinancialProduct {

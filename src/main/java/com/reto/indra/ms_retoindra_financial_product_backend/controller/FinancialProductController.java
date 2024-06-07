@@ -3,6 +3,7 @@ package com.reto.indra.ms_retoindra_financial_product_backend.controller;
 import com.org.reto.indra.util.EncryptionAESUtil;
 import com.reto.indra.ms_retoindra_financial_product_backend.dto.FinancialProductDTO;
 import com.reto.indra.ms_retoindra_financial_product_backend.model.FinancialProduct;
+import com.reto.indra.ms_retoindra_financial_product_backend.model.FinancialProductDocument;
 import com.reto.indra.ms_retoindra_financial_product_backend.service.FinancialProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import javax.crypto.SecretKey;
 
 @CrossOrigin("*")
 @RestController
@@ -25,7 +24,7 @@ public class FinancialProductController {
     FinancialProductService financialProductService;
 
     @GetMapping(value="/")
-    public ResponseEntity<Flux<FinancialProductDTO>> listFinancialProduct(){
+    public ResponseEntity<Flux<FinancialProduct>> listFinancialProduct(){
         return new ResponseEntity<>(financialProductService.listFinancialProduct(), HttpStatus.OK);
     }
     @PostMapping(value="/create")
