@@ -1,5 +1,8 @@
 package com.reto.indra.ms_retoindra_financial_product_backend.service.impl;
 
+import com.reto.indra.ms_retoindra_financial_product_backend.dto.FinancialProductDTO;
+import com.reto.indra.ms_retoindra_financial_product_backend.factory.FinancialProductFactory;
+import com.reto.indra.ms_retoindra_financial_product_backend.mapper.FinancialProductMapper;
 import com.reto.indra.ms_retoindra_financial_product_backend.model.FinancialProduct;
 import com.reto.indra.ms_retoindra_financial_product_backend.repository.FinancialProductRepository;
 import com.reto.indra.ms_retoindra_financial_product_backend.service.FinancialProductService;
@@ -14,9 +17,14 @@ public class FinancialProductServiceImpl implements FinancialProductService {
     @Autowired
     FinancialProductRepository financialProductRepository;
 
+    @Autowired
+    private FinancialProductFactory financialProductFactory;
+
     @Override
-    public Flux<FinancialProduct> listFinancialProduct() {
-        return financialProductRepository.findAll();
+    public Flux<FinancialProductDTO> listFinancialProduct() {
+
+        return financialProductRepository.findAll()
+                .map(FinancialProductMapper::toDTO);
     }
 
     @Override

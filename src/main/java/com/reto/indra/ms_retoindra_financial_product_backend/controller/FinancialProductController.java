@@ -1,6 +1,7 @@
 package com.reto.indra.ms_retoindra_financial_product_backend.controller;
 
 import com.org.reto.indra.util.EncryptionAESUtil;
+import com.reto.indra.ms_retoindra_financial_product_backend.dto.FinancialProductDTO;
 import com.reto.indra.ms_retoindra_financial_product_backend.model.FinancialProduct;
 import com.reto.indra.ms_retoindra_financial_product_backend.service.FinancialProductService;
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ public class FinancialProductController {
     FinancialProductService financialProductService;
 
     @GetMapping(value="/")
-    public ResponseEntity<Flux<FinancialProduct>> financialProductService(){
+    public ResponseEntity<Flux<FinancialProductDTO>> listFinancialProduct(){
         return new ResponseEntity<>(financialProductService.listFinancialProduct(), HttpStatus.OK);
     }
     @PostMapping(value="/create")
