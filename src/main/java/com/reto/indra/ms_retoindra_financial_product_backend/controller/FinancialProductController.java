@@ -28,14 +28,14 @@ public class FinancialProductController {
         return new ResponseEntity<>(financialProductService.listFinancialProduct(), HttpStatus.OK);
     }
     @PostMapping(value="/create")
-    public ResponseEntity<Mono<FinancialProduct>> createCustomer(@RequestBody FinancialProduct financialProduct) {
+    public ResponseEntity<Mono<FinancialProduct>> createFinancialProduct(@RequestBody FinancialProduct financialProduct) {
         try {
             logger.info("customer =>: {}", financialProduct.toString());
             financialProduct.setTypeAndName();
             logger.info("customer =>: {}", financialProduct.toString());
             return new ResponseEntity<>(financialProductService.createFinancialProduct(financialProduct), HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Error createFinancialProduct", e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
