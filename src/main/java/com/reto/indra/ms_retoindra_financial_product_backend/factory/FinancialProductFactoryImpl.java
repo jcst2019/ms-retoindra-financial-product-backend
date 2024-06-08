@@ -1,11 +1,7 @@
 package com.reto.indra.ms_retoindra_financial_product_backend.factory;
 
-import com.org.reto.indra.enums.ProductType;
 import com.reto.indra.ms_retoindra_financial_product_backend.model.*;
 import org.springframework.stereotype.Component;
-
-import static com.org.reto.indra.enums.ProductType.*;
-import static com.org.reto.indra.enums.ProductType.SAVINGS_ACCOUNT;
 
 @Component
 public class FinancialProductFactoryImpl implements FinancialProductFactory {
