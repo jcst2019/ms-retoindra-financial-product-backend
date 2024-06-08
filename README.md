@@ -13,7 +13,7 @@ Este repositorio contiene el microservicio `ms-retoindra-financial-product-backe
 
    ```bash
    git clone https://github.com/jcst2019/ms-retoindra-financial-product-backend.git
-
+   git clone https://github.com/jcst2019/starter-utilitarian-lib.git (Libreria)
 ## Uso
 El microservicio proporciona diferentes puntos finales (endpoints) REST para interactuar con los producto financieros de los clientes.
 
